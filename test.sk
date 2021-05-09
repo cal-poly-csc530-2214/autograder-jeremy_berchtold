@@ -1,4 +1,14 @@
-harness void doubleSketch(int x) {
-	int t = x * ??;
-	assert t == x + x;
+// Example from class
+// 7 + 4 + 2 + {0, 1} => 14
+
+int changeLastConstant(int a) {
+	if (??) return a;
+	return 1;
 }
+
+harness void main() {
+	int out = 7 + 4 + 2 + changeLastConstant(0);	
+	assert out == 14; 
+}
+
+
