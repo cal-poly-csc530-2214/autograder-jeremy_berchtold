@@ -1,0 +1,20 @@
+int applyRule0(int n) {
+	if (??) return n;
+	return (n) + (1);
+}
+int applyRule1(int n) {
+	if (??) return n;
+	return (n) - (1);
+}
+int applyRules(int n) {
+	return applyRule1(applyRule0(n));
+}
+int professorReferenceImpl() {
+	return (7) + ((4) + ((2) + (1)));
+}
+int studentImpl() {
+	return (7) + ((4) + ((2) + (applyRules(0))));
+}
+harness void main() {
+	assert professorReferenceImpl() == studentImpl();
+}
