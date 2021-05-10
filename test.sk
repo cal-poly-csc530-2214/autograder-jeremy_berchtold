@@ -1,14 +1,20 @@
-// Example from class
-// 7 + 4 + 2 + {0, 1} => 14
-
-int changeLastConstant(int a) {
-	if (??) return a;
-	return 1;
+int changeN(int n) {
+	if (??) return n;
+	return n-1;
 }
 
-harness void main() {
-	int out = 7 + 4 + 2 + changeLastConstant(0);	
-	assert out == 14; 
+int fact_reference(int n) {
+	if (n == 1) return 1;
+	return n * fact_reference(n - 1);
+}
+
+int fact_student(int n) {
+	if (n == 1) return 1;
+	return n * fact_student(changeN(n));
+}
+
+harness void main(int n) {
+	assert fact_reference(n) == fact_student(n);
 }
 
 
