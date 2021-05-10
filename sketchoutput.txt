@@ -1,0 +1,67 @@
+SKETCH version 1.7.6
+Benchmark = output.sk
+/* BEGIN PACKAGE ANONYMOUS*/
+/*output.sk:18*/
+
+void _main ()/*output.sk:18*/
+{
+  int _out_s1 = 0;
+  professorReferenceImpl(_out_s1);
+  int _out_s3 = 0;
+  studentImpl(_out_s3);
+  assert (_out_s1 == _out_s3); //Assert at output.sk:19 (0)
+}
+/*output.sk:1*/
+
+void applyRule0 (int n, ref int _out)/*output.sk:1*/
+{
+  _out = n + 1;
+  return;
+}
+/*output.sk:5*/
+
+void applyRule1 (int n, ref int _out)/*output.sk:5*/
+{
+  _out = n;
+  return;
+}
+/*output.sk:9*/
+
+void applyRules (int n, ref int _out)/*output.sk:9*/
+{
+  int _out_s7 = 0;
+  applyRule0(n, _out_s7);
+  int _out_s9 = 0;
+  applyRule1(_out_s7, _out_s9)//{};
+  _out = _out_s9;
+  return;
+}
+/*output.sk:18*/
+
+void main__Wrapper ()  implements main__WrapperNospec/*output.sk:18*/
+{
+  _main();
+}
+/*output.sk:18*/
+
+void main__WrapperNospec ()/*output.sk:18*/
+{ }
+/*output.sk:12*/
+
+void professorReferenceImpl (ref int _out)/*output.sk:12*/
+{
+  _out = 14;
+  return;
+}
+/*output.sk:15*/
+
+void studentImpl (ref int _out)/*output.sk:15*/
+{
+  int _out_s5 = 0;
+  applyRules(0, _out_s5);
+  _out = 7 + (4 + (2 + _out_s5));
+  return;
+}
+/* END PACKAGE ANONYMOUS*/
+[SKETCH] DONE
+Total time = 217
